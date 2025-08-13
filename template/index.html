@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo 2 –  Vertex AI Agent Builder</title>
+    <style>
+      /* Reset & base */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      a { text-decoration: none; color: inherit; }
+
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+      }
+      header img {
+        height: 50px;
+        margin-right: 1rem;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      /* Main content */
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+      }
+      main h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      main p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+      .data-sources {
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .data-sources h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .data-sources ul {
+        list-style: disc inside;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      /* Search widget */
+      .search-container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin-top: 2rem;
+      }
+      #searchWidgetTrigger {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 2px solid #0070c0;
+        border-radius: 50px;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      #searchWidgetTrigger:focus {
+        border-color: #004a80;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header with CoreBI logo -->
+    <header>
+      <img src="https://corebi.com.ar/wp-content/uploads/2021/05/corebi.png" alt="CoreBI Logo" />
+      <h1>Demo 2: Agents</h1>
+    </header>
+
+    <!-- Main hero section -->
+    <main>
+      <h2>Buscador generativo con Agent Builder</h2>
+      <p>
+        Una busqueda con todo el potencial de la Inteligencia Artificial Generativa.
+      </p>
+
+      <div class="data-sources">
+        <h3>Fuentes de datos:</h3>
+        <ul>
+          <li>Documentos internos COREBI</li>
+          <li>Proyectos ejecutados en COREBI</li>
+          <li>Propuestas comerciales </li>
+        </ul>
+      </div>
+
+      <div class="search-container">
+        <!-- Input que dispara el widget de búsqueda -->
+        <input
+          type="text"
+          placeholder="Buscar aquí..."
+          id="searchWidgetTrigger"
+          aria-label="Buscar en la demo de Agents"
+        />
+
+        <!-- Widget de búsqueda (oculto hasta activarse) -->
+        <gen-search-widget
+          configId="423bc9d4-1374-4691-ab8f-d9782f7693cc"
+          triggerId="searchWidgetTrigger"
+        ></gen-search-widget>
+      </div>
+    </main>
+
+    <!-- Carga del bundle JavaScript de Agent Builder -->
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=es_419"></script>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 CoreBI. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>
